@@ -64,10 +64,7 @@ def new_player(nickname):
 
 def create_new_player(nickname):
     """
-    Create a new player if the nickname is available.
-
-    This function checks whether the provided nickname is available. If it is,
-    a new player is created and added to the database.
+    Add a new player if the nickname is available.
 
     :param nickname: Nickname for the new player.
     :type nickname: str
@@ -103,8 +100,8 @@ def set_player_team(player_id, team):
     """
     Set the team for the given player.
 
-    This function assigns a team to the player with the given player ID,
-    provided the player exists and does not already belong to a team.
+    Assign a team to the player with the given player ID;
+    Check if the player exists and does not already belong to a team.
 
     :param player_id: The UUID of the player.
     :type player_id: str

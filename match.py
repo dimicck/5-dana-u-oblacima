@@ -10,7 +10,7 @@ def validate_teams(team1_id, team2_id, winning_team_id):
        :param str team2_id: The ID of the second team.
        :param str winning_team_id: The ID of the winning team (optional).
 
-       :return: True if the teams and winning team are valid; False otherwise.
+       :return: True if the input is valid; False otherwise.
        :rtype: bool
     """
     if team1_id == team2_id or not get_team_by_id(team1_id) or not get_team_by_id(team2_id):
@@ -34,7 +34,6 @@ def get_expected_elo(r1, r2):
 def get_rating_adjustment(hours):
     """
         Calculate rating adjustment (K-factor) for player
-        The K-factor decreases as the player gains experience.
 
         :param int hours: The number of hours the player has played.
 
@@ -49,7 +48,7 @@ def get_rating_adjustment(hours):
 
 def update_elo(player, r2, s):
     """
-    Updates the ELO rating of a player based on the match result.
+    Updates the ELO rating of a player.
 
     :param dict player: The player's data
     :param float r2: The average ELO rating of the opposing team.
@@ -101,8 +100,6 @@ def is_winner_team(team_id, winning_team_id):
 def add_new_match(team1_id, team2_id, winning_team_id, duration):
     """
        Records a new match between two teams.
-
-       Updates team and player stats, including wins, losses, hours played, and ELO ratings.
 
        :param str team1_id: The UUID of the first team.
        :param str team2_id: The UUID of the second team.

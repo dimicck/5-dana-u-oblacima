@@ -15,9 +15,9 @@ teams = {}
 
 def generate_team_id():
     """
-    Generates a unique team ID using UUID.
+    Generate a unique team ID using UUID
 
-    :return: String representing the team ID.
+    :return: A unique team ID
     :rtype: str
     """
     team_id = str(uuid.uuid4())
