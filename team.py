@@ -52,7 +52,7 @@ def new_team(team_name, players):
     :return: The created team dictionary, or None if arguments are not valid.
     :rtype: dict or None
     """
-    if not teamname_available(team_name) or len(players) != TEAM_SIZE:
+    if not team_name or not teamname_available(team_name) or len(players) != TEAM_SIZE:
         return None
 
     players_info = []

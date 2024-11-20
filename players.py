@@ -72,7 +72,7 @@ def create_new_player(nickname):
              or `None` if the nickname is not available.
     :rtype: dict or None
     """
-    if nickname_available(nickname):
+    if nickname and nickname_available(nickname):
         return new_player(nickname)
     return None
 

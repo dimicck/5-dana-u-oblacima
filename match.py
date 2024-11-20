@@ -13,6 +13,8 @@ def validate_teams(team1_id, team2_id, winning_team_id):
        :return: True if the input is valid; False otherwise.
        :rtype: bool
     """
+    if not team1_id or not team2_id:
+        return False
     if team1_id == team2_id or not get_team_by_id(team1_id) or not get_team_by_id(team2_id):
         return False
     if winning_team_id and (winning_team_id != team1_id and winning_team_id != team2_id):
@@ -74,6 +76,8 @@ def update_team_stats(team, r2, s, duration):
        :return: None
        """
     team = get_team_by_id(team)
+    if not team: return
+
     for player in team['players']:
         player['hoursPlayed'] += duration
         if not s:
