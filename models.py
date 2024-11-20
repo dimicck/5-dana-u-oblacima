@@ -1,13 +1,12 @@
 from typing import List
 from pydantic import BaseModel
-from uuid import UUID
 
 # Pydantic models for fastAPI requests
 
 class CreatePlayerModel(BaseModel):
     nickname: str
 
-class Team(BaseModel):
+class CreateTeamModel(BaseModel):
     teamName: str
     players: List[str]
 
@@ -15,7 +14,7 @@ class Team(BaseModel):
         return iter((self.teamName, self.players))
 
 
-class Match(BaseModel):
+class AddMatchModel(BaseModel):
     team1Id: str
     team2Id: str
     winningTeamId: str
